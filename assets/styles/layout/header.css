@@ -1,0 +1,85 @@
+.header {
+  padding-top: var(--spacer-m);
+  padding-bottom: var(--spacer-m);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-header);
+}
+
+.header .container {
+  display: flex;
+}
+
+.header img {
+  display: block;
+}
+
+.header-logo {
+  width: 100px;
+  position: relative;
+  z-index: var(--z-index-logo);
+}
+
+img.header-logo-inverso {
+  display: none;
+}
+
+.nav-activo img.header-logo-inverso {
+  display: block;
+}
+
+.nav-activo img.header-logo-normal {
+  display: none;
+}
+
+.header-nav-icon {
+  margin-left: auto;
+  position: relative;
+  z-index: var(--z-index-navicon);
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin-top: 3px;
+}
+
+.hamburger:hover {
+  opacity: 1;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: var(--primary);
+  height: 2px;
+  right: 0;
+  width: 40px;
+}
+
+.hamburger-inner {
+  width: 30px;
+}
+
+.hamburger-inner::after {
+  width: 20px;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--secondary-light);
+  width: 40px;
+}
+
+.hamburger-box:hover .hamburger-inner,
+.hamburger-box:hover .hamburger-inner::before,
+.hamburger-box:hover .hamburger-inner::after {
+  background-color: var(--secondary-4);
+}
+
+@media (max-width: 700px) {
+  .header-logo {
+    width: 70px;
+  }
+}

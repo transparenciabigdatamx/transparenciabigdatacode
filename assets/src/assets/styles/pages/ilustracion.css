@@ -1,0 +1,36 @@
+.ilustracion-texto {
+  padding-top: 20vh;
+  height: min-content;
+  position: sticky;
+  top: 0;
+}
+
+.ilustracion-texto .text-headline {
+  line-height: 1;
+  margin-bottom: var(--spacer-m);
+}
+
+@media (max-width: 900px) {
+  .ilustracion-texto {
+    position: unset;
+  }
+}
+
+@media (max-width: 700px) {
+  .ilustracion-texto {
+    padding-top: var(--spacer-xl);
+  }
+  .ilustracion-texto .text-headline {
+    margin-bottom: var(--spacer-s);
+  }
+}
+
+@media (max-width: 500px) {
+  .ilustracion-texto {
+    margin-top: 0;
+    order: -1;
+  }
+  .ilustracion-texto .text-headline {
+    line-height: 1.5;
+  }
+}
