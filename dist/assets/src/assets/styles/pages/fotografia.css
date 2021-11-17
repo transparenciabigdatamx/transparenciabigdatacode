@@ -1,0 +1,106 @@
+.fotografia-hero img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.fotografia-titulo {
+  grid-column: span 5;
+  margin-top: var(--spacer-2xl);
+  margin-bottom: var(--spacer-2xl);
+  text-align: center;
+}
+
+.fotografia-titulo .text-headline {
+  line-height: 1;
+}
+
+.fotografia-texto {
+  grid-column: span 6;
+  margin-top: var(--spacer-2xl);
+  margin-bottom: var(--spacer-2xl);
+}
+
+.fotografia-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.fotografia-contenidos .proyecto:not(:last-child) {
+  margin-bottom: var(--spacer-xl);
+}
+
+.fotografia-contenidos .full-width {
+  grid-column: 1 / -1;
+}
+
+.fotografia-contenidos .left {
+  grid-column: span 6;
+}
+
+.fotografia-contenidos .right {
+  grid-column: span 6;
+  grid-column-end: -1;
+}
+
+@media (max-width: 900px) {
+  .fotografia-titulo {
+    text-align: left;
+    grid-column: span 5;
+    grid-column-end: -1;
+    margin-top: var(--spacer-xl);
+    margin-bottom: var(--spacer-m);
+  }
+  .fotografia-texto {
+    grid-column: span 5;
+    grid-column-end: -1;
+    margin-top: 0;
+    margin-bottom: var(--spacer-xl);
+  }
+
+  .fotografia-contenidos .left,
+  .fotografia-contenidos .right {
+    grid-column: span 5;
+  }
+
+  .fotografia-contenidos .proyecto:not(:last-child) {
+    margin-bottom: var(--spacer-l);
+  }
+}
+
+@media (max-width: 700px) {
+  .fotografia-titulo {
+    grid-column: 2 / span 6;
+    margin-top: var(--spacer-l);
+    margin-bottom: var(--spacer-s);
+  }
+  .fotografia-texto {
+    grid-column: 2 / span 6;
+    margin-top: 0;
+    margin-bottom: var(--spacer-l);
+  }
+
+  .fotografia-contenidos .left,
+  .fotografia-contenidos .right {
+    grid-column: span 4;
+  }
+  .fotografia-contenidos .proyecto:not(:last-child) {
+    margin-bottom: var(--spacer-m);
+  }
+}
+
+@media (max-width: 500px) {
+  .fotografia-titulo {
+    grid-column: 1 / -1;
+  }
+  .fotografia-titulo .text-headline {
+    line-height: 1.5;
+  }
+  .fotografia-texto {
+    grid-column: 1 / -1;
+  }
+
+  .fotografia-contenidos .left,
+  .fotografia-contenidos .right {
+    grid-column: 1 / -1;
+  }
+}

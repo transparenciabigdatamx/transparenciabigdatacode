@@ -5,13 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npm-run-all build:*",
+        "build": "npm run cpdir &&  npm-run-all build:*",
+        "cpdir": "copyfiles  -V -u 1 \"assets/**/*\" \"./dist/assets\"",
         "build:html": "index.html",
-        "compile:sass": "node-sass  assets/styles/nav.css assets/styles/header.css  assets/styles/hamburguers.css assets/styles/styles.css assets/styles/stylesinvestigación.css  assets/styles/normalize.css assets/styles/scrollbott.css dist/src/style.comp.css",
+        "compile:sass": "node-sass  assets/styles/nav.css assets/styles/header.css  assets/styles/hamburguers.css assets/styles/styles.css assets/styles/stylesinvestigación.css  assets/styles/normalize.css assets/styles/scrollbott.css  dist/src/style.comp.css",
         "concat:css": "concat -o dist/src/concat.css dist/src/style.comp.css",
         "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" dist/src/style.comp.css -o dist/src/style.prefix.css",
-        "compress:css": "node-sass dist/src/style.prefix.css -o dist/src/stylecompressed.css",
-        "build:css": "npm-run-all compile:sass  prefix:css compress:css",
+        "compress:css": "node-sass dist/src/style.prefix.css  dist/src/stylecompressed.css",
+        "build:css": "npm-run-all compile:sass  prefix:css compress:css dist/src/style.comp.css",
         "build:js": "npm run uglify",
         "uglify": "uglifyjs assets/scripts/*.js -m -o dist/js/app.js"
     },
@@ -20,7 +21,7 @@
     "devDependencies": {
         "autoprefixer": "^10.3.7",
         "concat": "^1.0.3",
-        "copyfiles": "^2.4.1",
+        "copyfiles": "latest",
         "node-sass": "^6.0.1",
         "npm-run-all": "^4.1.5",
         "postcss-cli": "^9.0.1",
@@ -28,5 +29,6 @@
     },
     "dependencies": {
         "bootstrap": "^5.1.3"
+
     }
 }
